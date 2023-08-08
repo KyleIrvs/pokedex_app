@@ -5,7 +5,7 @@ const starterPokemon = [
     name: "Bulbasaur",
     pokedexNumber: 1,
     generation: 1,
-    types: [Types.grass, Types.poison],
+    types: [PokemonTypes.grass, PokemonTypes.poison],
     description:
         "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
     imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
@@ -15,7 +15,7 @@ const starterPokemon = [
     name: "Ivysaur",
     pokedexNumber: 2,
     generation: 1,
-    types: [Types.grass, Types.poison],
+    types: [PokemonTypes.grass, PokemonTypes.poison],
     description:
         "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.",
     imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png",
@@ -25,7 +25,7 @@ const starterPokemon = [
     name: "Venusar",
     pokedexNumber: 3,
     generation: 1,
-    types: [Types.grass, Types.poison],
+    types: [PokemonTypes.grass, PokemonTypes.poison],
     description:
         "Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
     imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png",
@@ -36,7 +36,7 @@ const starterPokemon = [
     name: "Charmander",
     pokedexNumber: 4,
     generation: 1,
-    types: [Types.fire],
+    types: [PokemonTypes.fire],
     description:
         "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
     imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
@@ -46,7 +46,7 @@ const starterPokemon = [
     name: "Charmeleon",
     pokedexNumber: 5,
     generation: 1,
-    types: [Types.fire],
+    types: [PokemonTypes.fire],
     description:
         "It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.",
     imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png",
@@ -56,7 +56,7 @@ const starterPokemon = [
     name: "Charizard",
     pokedexNumber: 6,
     generation: 1,
-    types: [Types.fire, Types.flying],
+    types: [PokemonTypes.fire, PokemonTypes.flying],
     description:
         "It is said that Charizard's fire burns hotter if it has experienced harsh battles. ",
     imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png",
@@ -67,7 +67,7 @@ const starterPokemon = [
     name: "Squirtle",
     pokedexNumber: 7,
     generation: 1,
-    types: [Types.water],
+    types: [PokemonTypes.water],
     description:
         "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
     imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
@@ -77,7 +77,7 @@ const starterPokemon = [
     name: "Wartortle",
     pokedexNumber: 8,
     generation: 1,
-    types: [Types.water],
+    types: [PokemonTypes.water],
     description:
         "It is recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.",
     imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png",
@@ -87,7 +87,7 @@ const starterPokemon = [
     name: "Blastoise",
     pokedexNumber: 9,
     generation: 1,
-    types: [Types.water],
+    types: [PokemonTypes.water],
     description:
         "It crushes its foe under its heavy body to cause fainting. In a pinch, it will withdraw inside its shell.",
     imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png",
