@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:pokedex/models/pokemon.dart';
 import 'package:pokedex/widgets/pokemon_physical_info.dart';
+import 'package:pokedex/widgets/pokemon_stats.dart';
 import 'package:pokedex/widgets/pokemon_type.dart';
+import 'package:pokedex/widgets/pokemon_type_stats.dart';
 
 class PokemonDetailsScreen extends StatelessWidget {
   const PokemonDetailsScreen({
@@ -38,39 +40,44 @@ class PokemonDetailsScreen extends StatelessWidget {
           ),
           backgroundColor:
               Theme.of(context).colorScheme.primary.withBlue(64).withGreen(64)),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              for (final t in pokemon.types) PokemonType(type: t)
-            ],
-          ),
-          Container(
-            color: Colors.white,
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: FadeInImage.assetNetwork(
-              placeholder: 'assets/images/pokeball_bg.png',
-              image: pokemon.imageUrl,
-              height: 300,
-              width: double.infinity,
-              fit: BoxFit.fitHeight,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            const SizedBox(
+              height: 24,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Text(
-              pokemon.description,
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                    fontSize: 16,
-                  ),
+            Container(
+              color: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: FadeInImage.assetNetwork(
+                placeholder: 'assets/images/pokeball_bg.png',
+                image: pokemon.imageUrl,
+                height: 300,
+                width: double.infinity,
+                fit: BoxFit.fitHeight,
+              ),
             ),
-          ),
-          PokemonPhysicalInfo(physicalInfo: pokemon.physicalInfo),
-          Text( 'Test')
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text(
+                pokemon.description,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground,
+                      fontSize: 16,
+                    ),
+              ),
+            ),
+            PokemonPhysicalInfo(physicalInfo: pokemon.physicalInfo),
+            const SizedBox(
+              height: 16,
+            ),
+            PokemonTypeStats(pokemon: pokemon),
+            const SizedBox(height: 16,),
+            PokemonStats(stats: pokemon.battleStats,)
+          ],
+        ),
       ),
     );
   }

@@ -3,10 +3,14 @@ import 'package:pokedex/models/pokemon.dart';
 import 'package:pokedex/widgets/pokemon_type.dart';
 
 class PokemonThumbnail extends StatelessWidget {
-  const PokemonThumbnail({super.key, required this.poke, required this.onSelectPokemon});
+  const PokemonThumbnail(
+      {super.key, required this.poke, required this.onSelectPokemon, this.shape = 'rect'});
 
   final Pokemon poke;
   final void Function() onSelectPokemon;
+  final String shape;
+
+  //TODO shape=circle for evolu
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,8 @@ class PokemonThumbnail extends StatelessWidget {
             FadeInImage(
               placeholder: const AssetImage('assets/images/pokeball_bg.png'),
               image: NetworkImage(poke.imageUrl),
-              fit: BoxFit.cover,
+              height: 175,
+              fit: BoxFit.fitHeight,
               width: double.infinity,
             ),
             Padding(
@@ -43,11 +48,14 @@ class PokemonThumbnail extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 poke.name,
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onSecondary,
                       fontWeight: FontWeight.bold,
                     ),
               ),
+            ),
+            const SizedBox(
+              height: 8,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
