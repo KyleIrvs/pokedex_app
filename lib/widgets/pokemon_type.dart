@@ -1,69 +1,71 @@
 import 'package:flutter/material.dart';
 
+import 'package:pokedex/models/pokemon.dart';
+
 class PokemonType extends StatelessWidget {
   const PokemonType({super.key, required this.type});
 
-  final String type;
+  final PokemonTypes type;
 
   List<Color> typeColor() {
     var typeColors = [Colors.white, Colors.white];
 
     switch (type) {
-      case 'bug':
+      case PokemonTypes.bug :
         typeColors[0] = typeColors[1] = Colors.green;
         break;
-      case 'dragon':
+      case PokemonTypes.dragon:
         typeColors[0] = Colors.blue.shade400;
         typeColors[1] = Colors.red.shade400;
         break;
-      case 'fairy':
+      case PokemonTypes.fairy:
         typeColors[0] = typeColors[1] = Colors.pink.shade300;
         break;
-      case 'fire':
+      case PokemonTypes.fire:
         typeColors[0] = typeColors[1] = Colors.orange;
         break;
-      case 'ghost':
+      case PokemonTypes.ghost:
         typeColors[0] = typeColors[1] = Colors.deepPurple;
         break;
-      case 'ground':
+      case PokemonTypes.ground:
         typeColors[0] = Colors.yellow;
         typeColors[1] = Colors.brown;
         break;
-      case 'normal':
+      case PokemonTypes.normal:
         typeColors[0] = typeColors[1] = Colors.grey;
         break;
-      case 'psychic':
+      case PokemonTypes.psychic:
         typeColors[0] = typeColors[1] = Colors.pink;
         break;
-      case 'steel':
+      case PokemonTypes.steel:
         typeColors[0] = typeColors[1] = Colors.indigo.shade200;
         break;
-      case 'dark':
+      case PokemonTypes.dark:
         typeColors[0] = typeColors[1] = Colors.grey.shade700;
         break;
-      case 'electric':
+      case PokemonTypes.electric:
         typeColors[0] = typeColors[1] = Colors.yellow.shade600;
         break;
-      case 'fighting':
+      case PokemonTypes.fighting:
         typeColors[0] = typeColors[1] = Colors.orange.shade700;
         break;
-      case 'flying':
+      case PokemonTypes.flying:
         typeColors[0] = Colors.blue.shade300;
         typeColors[1] = Colors.grey;
         break;
-      case 'grass':
+      case PokemonTypes.grass:
         typeColors[0] = typeColors[1] = Colors.limeAccent.shade400;
         break;
-      case 'ice':
+      case PokemonTypes.ice:
         typeColors[0] = typeColors[1] = Colors.lightBlue;
         break;
-      case 'poison':
+      case PokemonTypes.poison:
         typeColors[0] = typeColors[1] = Colors.purple;
         break;
-      case 'Rock':
+      case PokemonTypes.rock:
         typeColors[0] = typeColors[1] = Colors.lime.shade900;
         break;
-      case 'water':
+      case PokemonTypes.water:
         typeColors[0] = typeColors[1] = Colors.blue;
         break;
     }
@@ -71,7 +73,7 @@ class PokemonType extends StatelessWidget {
   }
 
   String get typeName {
-    return type[0].toUpperCase() + type.substring(1);
+    return type.name[0].toUpperCase() + type.name.substring(1);
   }
 
   @override

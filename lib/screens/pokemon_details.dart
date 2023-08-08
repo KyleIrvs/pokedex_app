@@ -43,7 +43,7 @@ class PokemonDetailsScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              for (final t in pokemon.types) PokemonType(type: t.name)
+              for (final t in pokemon.types) PokemonType(type: t)
             ],
           ),
           Container(
