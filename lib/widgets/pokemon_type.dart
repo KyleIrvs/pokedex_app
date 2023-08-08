@@ -78,8 +78,11 @@ class PokemonType extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final typeColors = typeColor();
+
     return Container(
+      alignment: Alignment.center,
       margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         gradient: LinearGradient(

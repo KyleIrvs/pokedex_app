@@ -16,6 +16,14 @@ const starterPokemon = [
       'Abilities': 'Overgrow',
       'Gender' : [PokemonGenders.male, PokemonGenders.female],
     },
+    battleStats: {
+      "HP" : 3,
+      "Attack" : 3,
+      "Defense" : 3,
+      "Special Attack" : 4,
+      "Special Defense" : 4,
+      "Speed" : 3 
+    },
     evolution: "Ivysaur",
   ),
   Pokemon(
@@ -33,6 +41,14 @@ const starterPokemon = [
       'Abilities': 'Overgrow',
       'Gender' : [PokemonGenders.male, PokemonGenders.female],
     },
+    battleStats: {
+      "HP" : 3,
+      "Attack" : 3,
+      "Defense" : 3,
+      "Sp Attack" : 4,
+      "Sp Defense" : 4,
+      "Speed" : 3 
+    },
     evolution: "Ivysaur",
   ),
   Pokemon(
@@ -49,6 +65,14 @@ const starterPokemon = [
       'Weight': 15.2,
       'Abilities': 'Overgrow',
       'Gender' : [PokemonGenders.male, PokemonGenders.female],
+    },
+    battleStats: {
+      "HP" : 3,
+      "Attack" : 3,
+      "Defense" : 3,
+      "Sp Attack" : 4,
+      "Sp Defense" : 4,
+      "Speed" : 3 
     },
     evolution: "",
   ),
@@ -68,6 +92,14 @@ const starterPokemon = [
       'Abilities': 'Overgrow',
       'Gender' : [PokemonGenders.male, PokemonGenders.female],
     },
+    battleStats: {
+      "HP" : 3,
+      "Attack" : 3,
+      "Defense" : 3,
+      "Sp Attack" : 4,
+      "Sp Defense" : 4,
+      "Speed" : 3 
+    },
     evolution: "Charmeleon",
   ),
   Pokemon(
@@ -85,6 +117,14 @@ const starterPokemon = [
       'Abilities': 'Overgrow',
       'Gender' : [PokemonGenders.male, PokemonGenders.female],
     },
+    battleStats: {
+      "HP" : 3,
+      "Attack" : 3,
+      "Defense" : 3,
+      "Sp Attack" : 4,
+      "Sp Defense" : 4,
+      "Speed" : 3 
+    },
     evolution: "Charizard",
   ),
   Pokemon(
@@ -101,6 +141,14 @@ const starterPokemon = [
       'Weight': 15.2,
       'Abilities': 'Overgrow',
       'Gender' : [PokemonGenders.male, PokemonGenders.female],
+    },
+    battleStats: {
+      "HP" : 3,
+      "Attack" : 3,
+      "Defense" : 3,
+      "Sp Attack" : 4,
+      "Sp Defense" : 4,
+      "Speed" : 3 
     },
     evolution: "",
   ),
@@ -120,6 +168,14 @@ const starterPokemon = [
       'Abilities': 'Overgrow',
       'Gender' : [PokemonGenders.male, PokemonGenders.female],
     },
+    battleStats: {
+      "HP" : 3,
+      "Attack" : 3,
+      "Defense" : 3,
+      "Special Attack" : 4,
+      "Special Defense" : 4,
+      "Speed" : 3 
+    },
     evolution: "Wartortle",
   ),
   Pokemon(
@@ -137,6 +193,14 @@ const starterPokemon = [
       'Abilities': 'Overgrow',
       'Gender' : [PokemonGenders.male, PokemonGenders.female],
     },
+    battleStats: {
+      "HP" : 3,
+      "Attack" : 3,
+      "Defense" : 3,
+      "Sp Attack" : 4,
+      "Sp Defense" : 4,
+      "Speed" : 3 
+    },
     evolution: "Blastoise",
   ),
   Pokemon(
@@ -153,6 +217,14 @@ const starterPokemon = [
       'Weight': 15.2,
       'Abilities': 'Overgrow',
       'Gender' : [PokemonGenders.male, PokemonGenders.female],
+    },
+    battleStats: {
+      "HP" : 3,
+      "Attack" : 3,
+      "Defense" : 3,
+      "Sp Attack" : 4,
+      "Sp Defense" : 4,
+      "Speed" : 3 
     },
     evolution: "",
   ),
