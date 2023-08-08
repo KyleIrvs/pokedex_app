@@ -1,4 +1,4 @@
-enum Types {
+enum PokemonTypes {
   bug,
   dragon,
   fairy,
@@ -20,19 +20,20 @@ enum Types {
 }
 
 class Pokemon {
-  const Pokemon(
-      {required this.name,
-      required this.pokedexNumber,
-      required this.generation,
-      required this.types,
-      required this.description,
-      required this.imageUrl,
-      this.evolution = "None"});
+  const Pokemon({
+    required this.name,
+    required this.pokedexNumber,
+    required this.generation,
+    required this.types,
+    required this.description,
+    required this.imageUrl,
+    this.evolution = "None",
+  });
 
   final String name;
   final int pokedexNumber;
   final int generation;
-  final List<Types> types;
+  final List<PokemonTypes> types;
   final String description;
   final String imageUrl;
   final String evolution;
