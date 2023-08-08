@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:pokedex/screens/pokemon_details.dart';
 import 'package:pokedex/data/starters.dart';
+import 'package:pokedex/screens/pokemon_items.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: themeData,
-      home: PokemonDetailsScreen(pokemon: starterPokemon[0]),
+      home: const PokemonItemsScreen(pokemonList: starterPokemon),
     );
   }
 }
