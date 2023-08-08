@@ -34,7 +34,7 @@ class PokemonItemsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 2 / 3.1,
+          childAspectRatio: 2 / 3.2,
           crossAxisSpacing: 15,
           mainAxisSpacing: 15,
         ),

@@ -87,7 +87,7 @@ class PokemonType extends StatelessWidget {
           end: Alignment.bottomRight,
           colors: [typeColors[0], typeColors[1]],
         ),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(

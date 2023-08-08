@@ -11,8 +11,9 @@ class PokemonThumbnail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 233, 233, 233),
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 233, 233, 233),
+        borderRadius: BorderRadius.circular(4),
       ),
       child: InkWell(
         onTap: onSelectPokemon,
