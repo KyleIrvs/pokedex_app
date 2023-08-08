@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:pokedex/models/pokemon.dart';
+import 'package:pokedex/widgets/pokemon_physical_info.dart';
 import 'package:pokedex/widgets/pokemon_type.dart';
 
 class PokemonDetailsScreen extends StatelessWidget {
@@ -67,6 +68,8 @@ class PokemonDetailsScreen extends StatelessWidget {
                   ),
             ),
           ),
+          PokemonPhysicalInfo(physicalInfo: pokemon.physicalInfo),
+          Text( 'Test')
         ],
       ),
     );

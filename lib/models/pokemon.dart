@@ -19,6 +19,11 @@ enum PokemonTypes {
   water,
 }
 
+enum PokemonGenders {
+  male, 
+  female,
+}
+
 class Pokemon {
   const Pokemon({
     required this.name,
@@ -27,6 +32,7 @@ class Pokemon {
     required this.types,
     required this.description,
     required this.imageUrl,
+    required this.physicalInfo,
     this.evolution = "None",
   });
 
@@ -36,5 +42,6 @@ class Pokemon {
   final List<PokemonTypes> types;
   final String description;
   final String imageUrl;
+  final Map<String, dynamic> physicalInfo;
   final String evolution;
 }
