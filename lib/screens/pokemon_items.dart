@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.dart';
+import 'package:pokedex/screens/pokemon_details.dart';
 import 'package:pokedex/widgets/pokemon_thumbnail.dart';
 
 class PokemonItemsScreen extends StatelessWidget {
@@ -9,6 +10,12 @@ class PokemonItemsScreen extends StatelessWidget {
   });
 
   final List<Pokemon> pokemonList;
+
+  void _onSelectPokemon(BuildContext context, Pokemon p) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (ctx) => PokemonDetailsScreen(pokemon: p),
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +39,13 @@ class PokemonItemsScreen extends StatelessWidget {
           mainAxisSpacing: 15,
         ),
         children: [
-          for (final poke in pokemonList) PokemonThumbnail(poke: poke)
+          for (final poke in pokemonList)
+            PokemonThumbnail(
+              poke: poke,
+              onSelectPokemon: () {
+                _onSelectPokemon(context, poke);
+              },
+            )
         ],
       ),
     );
