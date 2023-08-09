@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.dart';
 import 'package:pokedex/screens/pokemon_details.dart';
-import 'package:pokedex/widgets/pokemon_thumbnail.dart';
+import 'package:pokedex/widgets/pokemon_item.dart';
 
-class PokemonItemsScreen extends StatelessWidget {
-  const PokemonItemsScreen({
+class PokemonListScreen extends StatelessWidget {
+  const PokemonListScreen({
     super.key,
     required this.pokemonList,
+    required this.regionName,
   });
 
+  final String regionName;
   final List<Pokemon> pokemonList;
 
   void _onSelectPokemon(BuildContext context, Pokemon p) {
@@ -22,7 +24,7 @@ class PokemonItemsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-            "Select a Pokemon to Learn more.",
+            "$regionName Pokemon",
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -40,7 +42,7 @@ class PokemonItemsScreen extends StatelessWidget {
         ),
         children: [
           for (final poke in pokemonList)
-            PokemonThumbnail(
+            PokemonItem(
               poke: poke,
               onSelectPokemon: () {
                 _onSelectPokemon(context, poke);

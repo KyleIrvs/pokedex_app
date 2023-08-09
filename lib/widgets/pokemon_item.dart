@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.dart';
 import 'package:pokedex/widgets/pokemon_type.dart';
 
-class PokemonThumbnail extends StatelessWidget {
-  const PokemonThumbnail(
+class PokemonItem extends StatelessWidget {
+  const PokemonItem(
       {super.key, required this.poke, required this.onSelectPokemon, this.shape = 'rect'});
 
   final Pokemon poke;
   final void Function() onSelectPokemon;
   final String shape;
-
-  //TODO shape=circle for evolu
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:pokedex/models/pokemon.dart';
+import 'package:pokedex/widgets/pokemon_evolutions.dart';
 import 'package:pokedex/widgets/pokemon_physical_info.dart';
-import 'package:pokedex/widgets/pokemon_stats.dart';
-import 'package:pokedex/widgets/pokemon_type.dart';
+import 'package:pokedex/widgets/chart/pokemon_stats_chart.dart';
 import 'package:pokedex/widgets/pokemon_type_stats.dart';
 
 class PokemonDetailsScreen extends StatelessWidget {
@@ -74,8 +74,16 @@ class PokemonDetailsScreen extends StatelessWidget {
               height: 16,
             ),
             PokemonTypeStats(pokemon: pokemon),
-            const SizedBox(height: 16,),
-            PokemonStats(stats: pokemon.battleStats,)
+            const SizedBox(
+              height: 16,
+            ),
+            PokemonStats(
+              stats: pokemon.battleStats,
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            PokemonEvolutions(currentPokemon: pokemon),
           ],
         ),
       ),
