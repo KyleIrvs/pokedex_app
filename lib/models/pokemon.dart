@@ -128,7 +128,8 @@ class Pokemon {
     required this.imageUrl,
     required this.physicalInfo,
     required this.battleStats,
-    this.evolution = "None",
+    this.previousEvolution = 0,
+    this.evolution = 0,
   });
 
   final String name;
@@ -139,7 +140,8 @@ class Pokemon {
   final String imageUrl;
   final Map<String, dynamic> physicalInfo;
   final Map<String, double> battleStats;
-  final String evolution;
+  final int previousEvolution;
+  final int evolution;
 
   List<PokemonTypes> get weaknesses {
     List<PokemonTypes> currentWeaknesses = [];
@@ -185,4 +187,12 @@ class Pokemon {
     }
     return currentStrengths;
   }
+}
+
+class Region {
+  const Region({required this.name, required this.imageUrl, required this.generation});
+
+  final String name;
+  final String imageUrl;
+  final int generation;
 }
