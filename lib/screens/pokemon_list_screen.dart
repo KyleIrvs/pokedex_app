@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.dart';
-import 'package:pokedex/screens/pokemon_details.dart';
 import 'package:pokedex/screens/pokemon_search.dart';
-import 'package:pokedex/widgets/pokemon_item.dart';
 import 'package:pokedex/widgets/pokemon_list.dart';
 
 class PokemonListScreen extends StatelessWidget {
