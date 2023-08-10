@@ -9,6 +9,28 @@ class PokemonTypeStats extends StatelessWidget {
 
   final Pokemon pokemon;
 
+  Widget getTypeRow(List<PokemonTypes> types) {
+    if (types.length > 5) {
+      return Padding(
+        padding: const EdgeInsets.all(8),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          reverse: false,
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [for (final t in types) PokemonType(type: t)]),
+        ),
+      );
+    } else {
+      return Padding(
+        padding: const EdgeInsets.all(8),
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [for (final t in types) PokemonType(type: t)]),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,13 +49,7 @@ class PokemonTypeStats extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [for (final t in pokemon.types) PokemonType(type: t)],
-          ),
-        ),
+        getTypeRow(pokemon.types),
         const SizedBox(
           height: 12,
         ),
@@ -51,13 +67,7 @@ class PokemonTypeStats extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [for (final t in pokemon.strengths) PokemonType(type: t)],
-          ),
-        ),
+        getTypeRow(pokemon.strengths),
         const SizedBox(
           height: 12,
         ),
@@ -75,15 +85,7 @@ class PokemonTypeStats extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              for (final t in pokemon.weaknesses) PokemonType(type: t)
-            ],
-          ),
-        ),
+        getTypeRow(pokemon.weaknesses),
       ],
     );
   }
