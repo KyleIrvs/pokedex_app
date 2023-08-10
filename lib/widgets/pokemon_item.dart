@@ -46,9 +46,10 @@ class PokemonItem extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 poke.name,
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: Theme.of(context).colorScheme.onSecondary,
                       fontWeight: FontWeight.bold,
+                      fontSize: 20
                     ),
               ),
             ),

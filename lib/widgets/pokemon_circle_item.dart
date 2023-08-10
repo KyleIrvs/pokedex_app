@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:pokedex/models/pokemon.dart';
 
 class PokemonCircleItem extends StatelessWidget {
@@ -15,7 +16,7 @@ class PokemonCircleItem extends StatelessWidget {
   Widget build(BuildContext context) {
     Color circleColour;
     currentPokemon
-        ? circleColour = Colors.blueGrey.shade700
+        ? circleColour = const Color.fromARGB(255, 32, 89, 146)
         : circleColour = const Color.fromARGB(255, 68, 68, 68);
 
     return Container(
