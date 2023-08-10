@@ -20,96 +20,116 @@ enum PokemonTypes {
 }
 
 Map pokemonTypeEffectiveness = {
-  PokemonTypes.normal: {
-    "strong": [],
-    "weak": [PokemonTypes.rock, PokemonTypes.ghost, PokemonTypes.steel],
-    "resistant": [PokemonTypes.ghost],
-    "vulnerable": [PokemonTypes.fighting],
-  },
-  PokemonTypes.poison: {
-    "strong": [PokemonTypes.grass, PokemonTypes.fairy],
-    "weak": [
-      PokemonTypes.poison,
-      PokemonTypes.ground,
-      PokemonTypes.rock,
-      PokemonTypes.ghost,
-      PokemonTypes.steel
-    ],
-    "resistant": [
-      PokemonTypes.fighting,
-      PokemonTypes.poison,
-      PokemonTypes.grass,
-      PokemonTypes.fairy
-    ],
-    "vulnerable": [PokemonTypes.ground, PokemonTypes.psychic],
-  },
   PokemonTypes.grass: {
-    "strong": [PokemonTypes.ground, PokemonTypes.rock, PokemonTypes.water],
-    "weak": [
-      PokemonTypes.flying,
-      PokemonTypes.poison,
-      PokemonTypes.bug,
-      PokemonTypes.steel,
-      PokemonTypes.fire,
-      PokemonTypes.grass
-    ],
-    "resistant": [
-      PokemonTypes.ground,
-      PokemonTypes.water,
-      PokemonTypes.grass,
-      PokemonTypes.electric
-    ],
+    "strong": [PokemonTypes.water, PokemonTypes.ground, PokemonTypes.rock],
     "vulnerable": [
-      PokemonTypes.flying,
-      PokemonTypes.poison,
-      PokemonTypes.bug,
       PokemonTypes.fire,
+      PokemonTypes.flying,
+      PokemonTypes.bug,
+      PokemonTypes.poison,
       PokemonTypes.ice
     ],
+  },
+  PokemonTypes.water: {
+    "strong": [PokemonTypes.fire, PokemonTypes.ground, PokemonTypes.rock],
+    "vulnerable": [PokemonTypes.grass, PokemonTypes.electric],
   },
   PokemonTypes.fire: {
     "strong": [
-      PokemonTypes.bug,
-      PokemonTypes.steel,
       PokemonTypes.grass,
-      PokemonTypes.ice
+      PokemonTypes.bug,
+      PokemonTypes.ice,
+      PokemonTypes.steel
     ],
-    "weak": [
+    "vulnerable": [PokemonTypes.water, PokemonTypes.ground, PokemonTypes.rock],
+  },
+  PokemonTypes.normal: {
+    "strong": [],
+    "vulnerable": [PokemonTypes.fighting],
+  },
+  PokemonTypes.fighting: {
+    "strong": [
+      PokemonTypes.normal,
+      PokemonTypes.steel,
+      PokemonTypes.ice,
       PokemonTypes.rock,
-      PokemonTypes.fire,
-      PokemonTypes.water,
-      PokemonTypes.dragon
+      PokemonTypes.dark
     ],
-    "resistant": [
-      PokemonTypes.bug,
-      PokemonTypes.steel,
-      PokemonTypes.fire,
-      PokemonTypes.grass,
-      PokemonTypes.ice
+    "vulnerable": [
+      PokemonTypes.psychic,
+      PokemonTypes.fairy,
+      PokemonTypes.flying
     ],
-    "vulnerable": [PokemonTypes.ground, PokemonTypes.rock, PokemonTypes.water],
+  },
+  PokemonTypes.electric: {
+    "strong": [PokemonTypes.water, PokemonTypes.flying],
+    "vulnerable": [
+      PokemonTypes.ground,
+    ],
   },
   PokemonTypes.flying: {
-    "strong": [PokemonTypes.fighting, PokemonTypes.bug, PokemonTypes.grass],
-    "weak": [PokemonTypes.rock, PokemonTypes.steel, PokemonTypes.electric],
-    "resistant": [
+    "strong": [PokemonTypes.fighting, PokemonTypes.grass, PokemonTypes.bug],
+    "vulnerable": [PokemonTypes.electric, PokemonTypes.ice, PokemonTypes.rock],
+  },
+  PokemonTypes.ground: {
+    "strong": [
+      PokemonTypes.fire,
+      PokemonTypes.poison,
+      PokemonTypes.rock,
+      PokemonTypes.steel
+    ],
+    "vulnerable": [PokemonTypes.water, PokemonTypes.grass, PokemonTypes.ice],
+  },
+  PokemonTypes.rock: {
+    "strong": [
+      PokemonTypes.fire,
+      PokemonTypes.ice,
+      PokemonTypes.flying,
+      PokemonTypes.bug,
+    ],
+    "vulnerable": [
+      PokemonTypes.water,
+      PokemonTypes.grass,
       PokemonTypes.fighting,
       PokemonTypes.ground,
-      PokemonTypes.bug,
-      PokemonTypes.grass
+      PokemonTypes.steel
     ],
-    "vulnerable": [PokemonTypes.rock, PokemonTypes.electric, PokemonTypes.ice]
   },
-  PokemonTypes.water: {
-    "strong": [PokemonTypes.ground, PokemonTypes.rock, PokemonTypes.fire],
-    "weak": [PokemonTypes.water, PokemonTypes.grass, PokemonTypes.dragon],
-    "resistant": [
-      PokemonTypes.steel,
-      PokemonTypes.fire,
-      PokemonTypes.water,
-      PokemonTypes.ice
-    ],
-    "vulnerable": [PokemonTypes.grass, PokemonTypes.electric],
+  PokemonTypes.psychic: {
+    "strong": [PokemonTypes.fighting, PokemonTypes.poison],
+    "vulnerable": [PokemonTypes.bug, PokemonTypes.ghost, PokemonTypes.dark],
+  },
+  PokemonTypes.ghost: {
+    "strong": [PokemonTypes.psychic, PokemonTypes.ghost],
+    "vulnerable": [PokemonTypes.ghost, PokemonTypes.dark],
+  },
+  PokemonTypes.dark: {
+    "strong": [ PokemonTypes.psychic, PokemonTypes.ghost],
+    "vulnerable": [ PokemonTypes.fighting, PokemonTypes.bug, PokemonTypes.fairy],
+  },
+  PokemonTypes.bug: {
+    "strong": [ PokemonTypes.grass, PokemonTypes.psychic,  PokemonTypes.dark],
+    "vulnerable": [PokemonTypes.fire, PokemonTypes.flying, PokemonTypes.fairy],
+  },
+  PokemonTypes.poison: {
+    "strong": [PokemonTypes.grass, PokemonTypes.fairy],
+    "vulnerable": [PokemonTypes.ground, PokemonTypes.psychic],
+  },
+  PokemonTypes.steel: {
+    "strong": [PokemonTypes.ice, PokemonTypes.rock, PokemonTypes.fairy],
+    "vulnerable": [PokemonTypes.fire, PokemonTypes.fighting, PokemonTypes.ground],
+  },
+  PokemonTypes.ice: {
+    "strong": [PokemonTypes.grass, PokemonTypes.ground, PokemonTypes.flying, PokemonTypes.dragon],
+    "vulnerable": [PokemonTypes.fire, PokemonTypes.fighting, PokemonTypes.rock, PokemonTypes.steel],
+  },
+  PokemonTypes.dragon: {
+    "strong": [PokemonTypes.dragon],
+    "vulnerable": [PokemonTypes.dragon, PokemonTypes.fairy],
+  },
+  PokemonTypes.fairy: {
+    "strong": [PokemonTypes.dragon, PokemonTypes.fighting, PokemonTypes.dark],
+    "vulnerable": [PokemonTypes.poison, PokemonTypes.steel],
   },
 };
 
@@ -119,7 +139,7 @@ enum PokemonGenders {
 }
 
 class Pokemon {
-  const Pokemon({
+  Pokemon({
     required this.name,
     required this.pokedexNumber,
     required this.generation,
@@ -140,8 +160,8 @@ class Pokemon {
   final String imageUrl;
   final Map<String, dynamic> physicalInfo;
   final Map<String, double> battleStats;
-  final int previousEvolution;
-  final int evolution;
+  int previousEvolution;
+  int evolution;
 
   List<PokemonTypes> get weaknesses {
     List<PokemonTypes> currentWeaknesses = [];
@@ -185,12 +205,15 @@ class Pokemon {
         }
       }
     }
+
+
     return currentStrengths;
   }
 }
 
 class Region {
-  const Region({required this.name, required this.imageUrl, required this.generation});
+  const Region(
+      {required this.name, required this.imageUrl, required this.generation});
 
   final String name;
   final String imageUrl;
