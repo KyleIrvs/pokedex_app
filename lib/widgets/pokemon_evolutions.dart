@@ -12,21 +12,22 @@ class PokemonEvolutions extends StatelessWidget {
     List<List<Pokemon>> pokemonEvolutions = [[], [], []];
 
     while (p.previousEvolution != 0) {
-      p = starterPokemon.firstWhere((pokemon) =>
+      p = pokemonList.firstWhere((pokemon) =>
           pokemon.pokedexNumber == p.previousEvolution ? true : false);
+      if (p.previousEvolution > pokemonList.last.pokedexNumber) p.previousEvolution = 0;
     }
     pokemonEvolutions[0].insert(0, p);
     pokemonEvolutions[1].insertAll(
         0,
-        starterPokemon
+        pokemonList
             .where((pokemon) =>
                 pokemon.previousEvolution == p.pokedexNumber ? true : false)
             .toList());
-    p = starterPokemon.firstWhere(
+    p = pokemonList.firstWhere(
         (pokemon) => pokemon.pokedexNumber == p.evolution ? true : false);
     pokemonEvolutions[2].insertAll(
         0,
-        starterPokemon
+        pokemonList
             .where((pokemon) =>
                 pokemon.previousEvolution == p.pokedexNumber ? true : false)
             .toList());
@@ -66,6 +67,9 @@ class PokemonEvolutions extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget output;
 
+    if (currentPokemon.previousEvolution > pokemonList.last.pokedexNumber) currentPokemon.previousEvolution = 0;
+    if (currentPokemon.evolution > pokemonList.last.pokedexNumber) currentPokemon.evolution = 0;
+
     if (currentPokemon.evolution == 0 &&
         currentPokemon.previousEvolution == 0) {
       output = Text(
@@ -89,13 +93,14 @@ class PokemonEvolutions extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            color: Theme.of(context).colorScheme.secondary,
+            color: Theme.of(context).colorScheme.primary.withBlue(64).withGreen(64),
             margin: const EdgeInsets.all(10),
             child: Column(
               children: [
                 getRow(evolutions[0]),
-                if (evolutions[1].isEmpty) ...[
-                ] else if (evolutions[2].isEmpty) ...[
+                if (evolutions[1].isEmpty)
+                  ...[]
+                else if (evolutions[2].isEmpty) ...[
                   const Icon(Icons.arrow_downward),
                   getRow(evolutions[1]),
                 ] else ...[
