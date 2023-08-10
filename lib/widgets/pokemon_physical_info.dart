@@ -10,6 +10,20 @@ class PokemonPhysicalInfo extends StatelessWidget {
 
   final Map<String, dynamic> physicalInfo;
 
+  List<Widget> get genders {
+    if (physicalInfo["Gender"].isEmpty) {
+      return [const Icon(Icons.not_interested)];
+    } else {
+      List<Widget> gen = [];
+      for (final gender in physicalInfo["Gender"]) {
+        gender == PokemonGenders.male
+            ? gen.add(const Icon(Icons.male))
+            : gen.add(const Icon(Icons.female));
+      }
+      return gen;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -106,10 +120,7 @@ class PokemonPhysicalInfo extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  for (final gen in physicalInfo["Gender"])
-                    gen == PokemonGenders.male
-                        ? const Icon(Icons.male)
-                        : const Icon(Icons.female)
+                  ...genders,
                 ],
               )
             ],
