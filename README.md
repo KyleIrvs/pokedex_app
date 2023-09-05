@@ -1,16 +1,8 @@
-# pokedex
+Basic PokeDex-type app to display all information about the many different Pokemon. (Catalog to show information about various Pokemon, their types, physical info, evolution tree, genders, etc.)
+View by Region/Generation or even search for any Pokemon to find out more about each one.
 
-A new Flutter project.
+Made with flutter over the course of about 3 days to practice basic layout building, screen switching as well as loading and searching through data to display on the screen. Mostly a finished project but will add any features in the future that I see necessary or fun to implement. 
 
-## Getting Started
+All information was collected from the Official Pokemon website using a web scraper created by me to dump into a dart file that is read to display the information, manually typing in the info for all 1010 different Pokemon would have simply taken too long.  
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The App is not perfect or optimized but is more just for me to practice my flutter and dart skills. 
